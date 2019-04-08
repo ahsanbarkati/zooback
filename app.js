@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -9,6 +10,12 @@ var usersRouter = require('./routes/users');
 var Router = require('./routes/routes');
 
 var app = express();
+mongoose.connect('mongodb://localhost/ManualAuth', { useMongoClient: true });
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
