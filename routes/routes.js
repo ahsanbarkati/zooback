@@ -3,18 +3,13 @@ var router = express.Router();
 var User = require('../models/user');
 var crypto = require('crypto');
 
-// router.get('/', function (req, res, next) {
-// 	return res.render('index.ejs');
-// });
-
 var salt = "7c3e37274a1536c9c41e311054165984";
 router.post('/register', function(req, res, next) {
 	console.log(req.body);
 	var personInfo = req.body;
-
-
+	
 	if(!personInfo.email || !personInfo.username || !personInfo.password || !personInfo.passwordConf){
-		res.send({"Success":"OK"});
+		res.send({"Success":"Data not supplied"});
 	} else {
 		if (personInfo.password == personInfo.passwordConf) {
 
@@ -61,10 +56,6 @@ router.post('/register', function(req, res, next) {
 	}
 });
 
-// router.get('/login', function (req, res, next) {
-// 	return res.render('login.ejs');
-// });
-
 router.post('/login', function (req, res, next) {
 	//console.log(req.body);
 	User.findOne({email:req.body.email},function(err,data){
@@ -95,8 +86,8 @@ router.get('/profile', function (req, res, next) {
 		if(!data){
 			res.redirect('/');
 		}else{
-			//console.log("found");
-			// return res.render('data.ejs', {"name":data.username,"email":data.email});
+			console.log("found");
+			return res.render('data.ejs', {"name":data.username,"email":data.email});
 		}
 	});
 });
@@ -105,7 +96,6 @@ router.get('/logout', function (req, res, next) {
 	console.log("logout")
 	console.log(req.session)
 	if (req.session) {
-    // delete session object
     req.session.destroy(function (err) {
     	if (err) {
     		return next(err);
@@ -116,19 +106,12 @@ router.get('/logout', function (req, res, next) {
 }
 });
 
-// router.get('/forgetpass', function (req, res, next) {
-// 	res.render("forget.ejs");
-// });
-
 router.post('/forgetpass', function (req, res, next) {
-	//console.log('req.body');
-	//console.log(req.body);
 	User.findOne({email:req.body.email},function(err,data){
 		console.log(data);
 		if(!data){
 			res.send({"Success":"This Email Is not regestered!"});
 		}else{
-			// res.send({"Success":"Success!"});
 			if (req.body.password==req.body.passwordConf) {
 			data.password=crypto.pbkdf2Sync(req.body.password, salt,  1000, 64, `sha512`).toString(`hex`);
 			data.passwordConf=crypto.pbkdf2Sync(req.body.passwordConf, salt,  1000, 64, `sha512`).toString(`hex`);
@@ -156,11 +139,19 @@ router.get('/request', function (req, res, next) {
 		if(!data){
 			res.send("Bikes not available. Please try after some time");
 		}else{
-			//console.log("found");
-			// console.log(data);
-			// return res.render('request.ejs', {"bikeid":data.bike_id, "bikename":data.bikename, "lat":data.location.lat, "long":data.location.long});
+			console.log("found");
+			console.log(data);
+			res.send({"bikeid":data.bike_id, "bikename":data.bikename, "lat":data.location.Lat, "long":data.location.Lon});
 		}
 	});
 });
+
+router.post('/endRide', function (req, res, next) {
+	console.log("requesting ride end");
+	console.log(req.body);
+	
+	res.send({"Success":"OK"})
+});
+
 
 module.exports = router;
