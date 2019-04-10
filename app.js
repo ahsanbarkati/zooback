@@ -7,8 +7,6 @@ var logger = require('morgan');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var Router = require('./routes/routes');
 
 var app = express();
@@ -19,10 +17,11 @@ bike = new Bike({bike_id: 0,
 	location: {Lat:100, Lon:100},
 	status: 0
   }) 
+
 bike.save(function (err, bike) {
     if (err) return console.error(err);
     console.log(bike.bike_id + " saved to bookstore collection.");
-  }); 
+  });
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -48,8 +47,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/rout', Router);
 
 // catch 404 and forward to error handler

@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var crypto = require('crypto');
 
 userSchema = new Schema( {
 	
@@ -20,4 +19,4 @@ User = mongoose.model('User', userSchema);
 Bike = mongoose.model('Bike',bikeSchema);
 
 module.exports = User;
-// module.exports = Bike;
+module.exports = Bike;
