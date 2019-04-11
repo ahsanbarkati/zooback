@@ -1,31 +1,30 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var mongoose = require('mongoose');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const Router = require('./routes/routes');
 
-var Router = require('./routes/routes');
-
-var app = express();
-mongoose.connect('mongodb://localhost/ManualAuth', { useMongoClient: true });
+const app = express();
+mongoose.connect('mongodb://localhost/ManualAuth', {useMongoClient: true});
 
 bike = new Bike({bike_id: 0,
-	bikename: "Yamaha",
-	location: {Lat:100, Lon:100},
-	status: 0
-  }) 
+  bikename: 'Yamaha',
+  location: {Lat: 100, Lon: 100},
+  status: 0,
+});
 
-bike.save(function (err, bike) {
-    if (err) return console.error(err);
-    console.log(bike.bike_id + " saved to bookstore collection.");
-  });
+bike.save(function(err, bike) {
+  if (err) return console.error(err);
+  console.log(bike.bike_id + ' saved to bookstore collection.');
+});
 
-var db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
+db.once('open', function() {
 });
 
 app.use(session({
@@ -33,8 +32,8 @@ app.use(session({
   resave: true,
   saveUninitialized: false,
   store: new MongoStore({
-    mongooseConnection: db
-  })
+    mongooseConnection: db,
+  }),
 }));
 
 // view engine setup
@@ -43,7 +42,7 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -66,8 +65,9 @@ app.use(function(err, req, res, next) {
 });
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Origin', '*');
+  // eslint-disable-next-line max-len
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
