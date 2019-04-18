@@ -41,7 +41,7 @@ router.post('/forgetpass', function(req, res, next) {
 
 
 // Ride Routes
-router.get('/request', function(req, res, next) {
+router.post('/request', function(req, res, next) {
   requestRide.methods.requestRide(req, res, next);
 });
 

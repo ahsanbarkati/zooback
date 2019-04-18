@@ -7,6 +7,7 @@ userSchema = new Schema( {
   username: String,
   password: String,
   passwordConf: String,
+  Token: String,
 }),
 bikeSchema = new Schema( {
   bike_id: Number,

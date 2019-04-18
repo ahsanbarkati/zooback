@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 const crypto = require('crypto');
-
+var jwt = require("jsonwebtoken");
 
 const methods = {
   registerUser: function(req, res, next, salt) {
@@ -25,6 +25,7 @@ const methods = {
                 username: personInfo.username,
                 password: crypto.pbkdf2Sync(personInfo.password, salt, 1000, 64, `sha512`).toString(`hex`),
                 passwordConf: crypto.pbkdf2Sync(personInfo.passwordConf, salt, 1000, 64, `sha512`).toString(`hex`),
+                Token: null,
               });
 
               newPerson.save(function(err, Person) {
@@ -36,6 +37,8 @@ const methods = {
               });
             }).sort({_id: -1}).limit(1);
             res.send({'Success': 'You are regestered,You can login now.'});
+            // return res.json({token: jwt.sign({ email: personInfo.email,  username: personInfo.username}, 'RESTFULAPIs')});
+
           } else {
             res.send({'Success': 'Email is already used.'});
           }

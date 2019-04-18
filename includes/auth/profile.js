@@ -8,9 +8,12 @@ const methods = {
       if (!data) {
         res.redirect('/');
       } else {
-        console.log('found');
-        return res.render('data.ejs', {'name': data.username, 'email': data.email});
-      }
+        if (req.query.Token == data.Token) {
+          console.log('found');
+          // console.log(req.query.Token)
+          res.send({name: data.username, email: data.email});
+        }
+      }  
     });
   },
 };
