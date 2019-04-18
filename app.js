@@ -11,17 +11,6 @@ const Router = require('./routes/routes');
 const app = express();
 mongoose.connect('mongodb://localhost/ManualAuth', {useMongoClient: true});
 
-bike = new Bike({bike_id: 0,
-  bikename: 'Yamaha',
-  location: {Lat: 100, Lon: 100},
-  status: 0,
-});
-
-bike.save(function(err, bike) {
-  if (err) return console.error(err);
-  console.log(bike.bike_id + ' saved to bookstore collection.');
-});
-
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
