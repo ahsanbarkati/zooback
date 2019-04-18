@@ -3,14 +3,11 @@ const request = require('request');
 const methods = {
   requestRide: function(req, res, next) {
     console.log('requesting ride');
+    console.log(req.body);
     Bike.findOne({status: 0}, function(err, data) {
-      console.log('data');
-      console.log(data);
       if (!data) {
         res.send('Bikes not available. Please try after some time');
       } else {
-        console.log('found');
-        console.log(data);
         res.send({
           'bikeid': data.bike_id,
           'bikename': data.bikename,
