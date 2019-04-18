@@ -28,7 +28,7 @@ router.post('/login', function(req, res, next) {
   login.methods.loginUser(req, res, next, salt);
 });
 
-router.get('/profile', function(req, res, next) {
+router.post('/profile', function(req, res, next) {
   profile.methods.profileUser(req, res, next, salt);
 });
 
