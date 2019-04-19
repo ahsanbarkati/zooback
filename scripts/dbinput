@@ -1,0 +1,2 @@
+use ManualAuth
+db.bikes.find({})fsdfsdaf

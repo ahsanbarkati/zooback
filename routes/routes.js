@@ -14,6 +14,7 @@ const forgetPassword = require('../includes/auth/forgetPass');
 // Import Ride Modules
 const requestRide = require('../includes/ride/requestRide');
 const endRide = require('../includes/ride/endRide');
+const admin = require('../includes/admin/admin');
 
 const salt = '7c3e37274a1536c9c41e311054165984';
 
@@ -27,7 +28,7 @@ router.post('/login', function(req, res, next) {
   login.methods.loginUser(req, res, next, salt);
 });
 
-router.get('/profile', function(req, res, next) {
+router.post('/profile', function(req, res, next) {
   profile.methods.profileUser(req, res, next, salt);
 });
 
@@ -47,6 +48,10 @@ router.post('/request', function(req, res, next) {
 
 router.post('/endRide', function(req, res, next) {
   endRide.methods.endRide(req, res, next);
+});
+
+router.post('/admin', function(req, res, next) {
+  admin.methods.processQuery(req, res, next);
 });
 
 module.exports = router;

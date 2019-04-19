@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Bike = require('./model');
 
-mongoose.connect('mongodb://localhost/bikeInit', {useMongoClient: true});
+mongoose.connect('mongodb://localhost/ManualAuth', {useMongoClient: true});
 
 /* eslint-disable max-len*/
 const numBikes = 10;

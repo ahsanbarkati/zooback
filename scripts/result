@@ -1,0 +1,7 @@
+MongoDB shell version v4.0.8
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("6cdec108-b770-4797-95c6-2dc84c20ede1") }
+MongoDB server version: 4.0.8
+switched to db ManualAuth
+2019-04-19T05:53:33.586+0530 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:17
+bye

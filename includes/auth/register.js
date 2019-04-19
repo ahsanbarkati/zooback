@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 const crypto = require('crypto');
-var jwt = require("jsonwebtoken");
 
 const methods = {
   registerUser: function(req, res, next, salt) {
