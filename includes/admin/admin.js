@@ -19,7 +19,18 @@ const methods = {
     const input = 'use ManualAuth\n' + req.body.query;
     const cmdToLaunch = 'python scripts/process.py';
     let result;
+    let keys;
 
+    let check;
+
+    function validateJSON(json) {
+      try {
+        check = JSON.parse(json);
+      } catch (e) {
+        check = 0;
+      }
+      return check;
+    };
     function writeFile() {
       return new Promise((resolve) => {
         setTimeout(()=>{
@@ -64,21 +75,35 @@ const methods = {
       return new Promise((resolve) => {
         setTimeout(()=>{
           const s = result.split('\n');
+          console.log(s);
           result = s.slice(5, s.length-2);
+          console.log(result);
           for (let i=0; i< result.length; i++) {
             result[i] = '{' + result[i].slice(48,);
-            result[i] = JSON.parse(result[i]);
+            check = validateJSON(result[i]);
+            if (check == 0 ) {
+              res.send({'Success': 'Failure'});
+              console.log('Failure Request Sent');
+              resolve('parse done');
+              break;
+            } else {
+              result[i] = JSON.parse(result[i]);
+            }
           };
-          console.log(result);
-          console.log('Parsing done');
-          res.send({'Success': 'OK', 'result': result});
-          console.log('Request Sent');
-          resolve('parse done');
+          if (check !=0) {
+            keys = Object.keys(result[0]);
+            console.log(result);
+            console.log('Parsing done');
+            res.send({'Success': 'OK', 'result': result, 'keys': keys});
+            console.log('Request Sent');
+            resolve('parse done');
+          };
         }, 200);
       });
     };
 
     async function msg() {
+      check = 0;
       const a = await writeFile();
       const b = await execUNIX();
       const c = await readFile();
@@ -86,7 +111,10 @@ const methods = {
       console.log(`${a} ${b} ${c} ${d}`);
     };
 
-    msg();
+    try {
+      msg();
+    } catch (e) {
+    }
     // Processing Done
   },
 };
