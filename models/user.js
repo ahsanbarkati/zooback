@@ -15,8 +15,19 @@ bikeSchema = new Schema( {
   location: Object,
   status: Number,
 }),
+rideSchema = new Schema( {
+  RideID: Number,
+  BikeID: Number,
+  UserID: Number,
+  Src: Object,
+  Dest: Object,
+  StartTime: Number,
+  EndTime: Number,
+  Distance: Number,
+}),
 User = mongoose.model('User', userSchema);
 Bike = mongoose.model('Bike', bikeSchema);
+Ride = mongoose.model('Ride', rideSchema);
 
 module.exports = User;
 module.exports = Bike;
