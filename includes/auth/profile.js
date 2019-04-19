@@ -13,7 +13,7 @@ const methods = {
           // console.log(req.query.Token)
           res.send({name: data.username, email: data.email});
         }
-      }  
+      };  
     });
   },
 };

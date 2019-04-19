@@ -1,7 +1,8 @@
 MongoDB shell version v4.0.8
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("6cdec108-b770-4797-95c6-2dc84c20ede1") }
+Implicit session: session { "id" : UUID("49506b67-4fc3-4f42-8b54-0bcee29975a3") }
 MongoDB server version: 4.0.8
 switched to db ManualAuth
-2019-04-19T05:53:33.586+0530 E QUERY    [js] SyntaxError: missing ; before statement @(shell):1:17
+{ "_id" : ObjectId("5cb9e1c3122cfc055ae08d80"), "RideID" : 1, "Src" : { "Lat" : 15.41407132833885, "long" : 12.659898076994542 }, "Dest" : { "Lat" : 15.278886035075482, "long" : 13.369564776350028 }, "StartTime" : 1555685825, "EndTime" : 1555685827, "Distance" : 77.56426813612741, "__v" : 0 }
+{ "_id" : ObjectId("5cb9e3cb7676750b02f541da"), "RideID" : 2, "Src" : { "Lat" : 15.536774735781993, "long" : 12.044825577771405 }, "Dest" : { "Lat" : 15.402608115377124, "long" : 12.056609394485942 }, "StartTime" : 1555686345, "EndTime" : 1555686347, "Distance" : 14.971279683744172, "__v" : 0 }
 bye

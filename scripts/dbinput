@@ -1,2 +1,2 @@
 use ManualAuth
-db.bikes.find({})fsdfsdaf
+db.rides.find()
