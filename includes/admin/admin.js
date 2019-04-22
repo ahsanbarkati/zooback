@@ -22,6 +22,35 @@ const methods = {
     let keys;
 
     let check;
+    function convert(unixtimestamp) {
+      // Months array
+      let months_arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      // Convert timestamp to milliseconds
+      let date = new Date(unixtimestamp*1000);
+
+      // Year
+      let year = date.getFullYear();
+
+      // Month
+      let month = months_arr[date.getMonth()];
+
+      // Day
+      let day = date.getDate();
+
+      // Hours
+      let hours = date.getHours();
+
+      // Minutes
+      let minutes = '0' + date.getMinutes();
+
+      // Seconds
+      let seconds = '0' + date.getSeconds();
+
+      // Display date time in MM-dd-yyyy h:m:s format
+      let convdataTime = month+'-'+day+'-'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+      return convdataTime;
+    }
 
     function validateJSON(json) {
       try {
@@ -88,6 +117,8 @@ const methods = {
               break;
             } else {
               result[i] = JSON.parse(result[i]);
+              result[i]['StartTime'] = convert(result[i]['StartTime']);
+              result[i]['EndTime'] = convert(result[i]['EndTime']);
             }
           };
           if (check !=0) {
