@@ -8,6 +8,7 @@ userSchema = new Schema( {
   password: String,
   passwordConf: String,
   Token: String,
+  Wallet: Number,
 }),
 bikeSchema = new Schema( {
   bike_id: Number,

@@ -1,8 +1,12 @@
 MongoDB shell version v4.0.8
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("52a17fa9-6a49-4eb4-994c-658328f77949") }
+Implicit session: session { "id" : UUID("63cce8f0-f770-4b37-af3c-4146861f45aa") }
 MongoDB server version: 4.0.8
 switched to db ManualAuth
-{ "_id" : ObjectId("5cbd862795ab2f0862086a28"), "RideID" : 5, "UserID" : 5, "Src" : { "Lat" : 14.806823417742457, "Lon" : 11.788146518266018 }, "Dest" : { "Lat" : 15.444722711468573, "Lon" : 11.679414905567896 }, "StartTime" : 1555924517, "EndTime" : 1555924519, "Distance" : 71.88154155010079, "__v" : 0 }
-{ "_id" : ObjectId("5cbd8ddadaac9e0dd6dbac7c"), "RideID" : 15, "UserID" : 5, "Src" : { "Lat" : 15.403187393840437, "Lon" : 11.802630222777191 }, "Dest" : { "Lat" : 15.475138012611739, "Lon" : 11.759819275277266 }, "StartTime" : 1555926488, "EndTime" : 1555926490, "Distance" : 9.222556273168989, "__v" : 0 }
+{ "_id" : ObjectId("5cbd96d1ff0fe620ef55e4bd"), "RideID" : 9, "UserID" : 1, "Src" : { "Lat" : 14.990971122332091, "Lon" : 12.002699631884795 }, "Dest" : { "Lat" : 15.44356073901846, "Lon" : 12.536210592910923 }, "StartTime" : 1555928783, "EndTime" : 1555928785, "Distance" : 76.21633298956387, "__v" : 0 }
+{ "_id" : ObjectId("5cbd970509847221b2d53ccf"), "RideID" : 10, "UserID" : 1, "Src" : { "Lat" : 15.003766305596693, "Lon" : 11.976939235292958 }, "Dest" : { "Lat" : 15.139516834138789, "Lon" : 11.88549513628646 }, "StartTime" : 1555928835, "EndTime" : 1555928837, "Distance" : 18.006133667649713, "__v" : 0 }
+{ "_id" : ObjectId("5cbd9728c7702521e2581849"), "RideID" : 11, "UserID" : 1, "Src" : { "Lat" : 15.0898924589391, "Lon" : 11.266766681870159 }, "Dest" : { "Lat" : 14.946742622766408, "Lon" : 10.83984937908184 }, "StartTime" : 1555928870, "EndTime" : 1555928872, "Distance" : 48.53166498703817, "__v" : 0 }
+{ "_id" : ObjectId("5cbd9872c641de227c6c75d8"), "RideID" : 12, "UserID" : 1, "Src" : { "Lat" : 14.718274665905767, "Lon" : 11.759480043173063 }, "Dest" : { "Lat" : 15.024460834895724, "Lon" : 11.623127665418819 }, "StartTime" : 1555929200, "EndTime" : 1555929202, "Distance" : 37.064216722447775, "__v" : 0 }
+{ "_id" : ObjectId("5cbd993dc641de227c6c75d9"), "RideID" : 13, "UserID" : 1, "Src" : { "Lat" : 14.381489877014394, "Lon" : 11.97446659902986 }, "Dest" : { "Lat" : 14.263934572005214, "Lon" : 12.017013307104932 }, "StartTime" : 1555929403, "EndTime" : 1555929405, "Distance" : 13.851333568407469, "__v" : 0 }
+{ "_id" : ObjectId("5cbd9953c641de227c6c75da"), "RideID" : 14, "UserID" : 1, "Src" : { "Lat" : 15.15173967390935, "Lon" : 12.02506773884751 }, "Dest" : { "Lat" : 15.358886435593911, "Lon" : 11.826894822314765 }, "StartTime" : 1555929424, "EndTime" : 1555929426, "Distance" : 31.343491965038833, "__v" : 0 }
 bye

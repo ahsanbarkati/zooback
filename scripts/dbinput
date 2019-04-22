@@ -1,2 +1,2 @@
 use ManualAuth
-db.rides.find({UserID:5})
+db.rides.find({UserID:1})

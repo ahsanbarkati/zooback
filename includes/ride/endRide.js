@@ -39,6 +39,13 @@ const methods = {
                   console.log('Success');
                 }
               });
+
+              const myquery = {unique_id: data.status};
+              const newvalues = {$inc: {Wallet: -rideInfo.Distance * 1.5}};
+              User.updateOne(myquery, newvalues, function(err, res) {
+                if (err) throw err;
+                console.log('User Wallet updated');
+              });
             });
           }).sort({_id: -1}).limit(1);
           resolve('Data Saved');

@@ -1,0 +1,2 @@
+use ManualAuth
+ db.users.find()

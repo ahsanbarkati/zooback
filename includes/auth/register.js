@@ -25,6 +25,7 @@ const methods = {
                 password: crypto.pbkdf2Sync(personInfo.password, salt, 1000, 64, `sha512`).toString(`hex`),
                 passwordConf: crypto.pbkdf2Sync(personInfo.passwordConf, salt, 1000, 64, `sha512`).toString(`hex`),
                 Token: null,
+                Wallet: 1000,
               });
 
               newPerson.save(function(err, Person) {

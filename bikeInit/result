@@ -1,0 +1,9 @@
+MongoDB shell version v4.0.8
+connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("b426f063-089a-4119-9b95-bfa9509b84db") }
+MongoDB server version: 4.0.8
+switched to db ManualAuth
+{ "_id" : ObjectId("5cabc5461ddb7275fe191968"), "unique_id" : 1, "email" : "namanj@iitk.ac.in", "username" : "namanj", "password" : "5a0aec1288cc22fcc3161dbf53c9673540efe3dd265611b0f6107f83682c48948707935ad5e2b2229d1cac4dae7f4c1908670bdc428f9c72f87e569619d1936c", "passwordConf" : "5a0aec1288cc22fcc3161dbf53c9673540efe3dd265611b0f6107f83682c48948707935ad5e2b2229d1cac4dae7f4c1908670bdc428f9c72f87e569619d1936c", "__v" : 0 }
+{ "_id" : ObjectId("5cabd0fa34fb210cdf692315"), "unique_id" : 2, "email" : "namanj2@iitk.ac.in", "username" : "namanj", "password" : "37473b9dce9beb3a3db5efdade18dd5e46ba089537fee435751394731682495dea4623daa0e1c2b62fab98fa303b66d037f26f4b11ce1325f78a839ddd5ff7f4", "passwordConf" : "37473b9dce9beb3a3db5efdade18dd5e46ba089537fee435751394731682495dea4623daa0e1c2b62fab98fa303b66d037f26f4b11ce1325f78a839ddd5ff7f4", "__v" : 0 }
+{ "_id" : ObjectId("5cae295ac0da6b7c867e6c5f"), "unique_id" : 3, "email" : "namanj3@iitk.ac.in", "username" : "namanj", "password" : "5a0aec1288cc22fcc3161dbf53c9673540efe3dd265611b0f6107f83682c48948707935ad5e2b2229d1cac4dae7f4c1908670bdc428f9c72f87e569619d1936c", "passwordConf" : "5a0aec1288cc22fcc3161dbf53c9673540efe3dd265611b0f6107f83682c48948707935ad5e2b2229d1cac4dae7f4c1908670bdc428f9c72f87e569619d1936c", "__v" : 0 }
+bye

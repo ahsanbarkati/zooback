@@ -11,7 +11,7 @@ const methods = {
         if (req.body.Token == data.Token) {
           console.log('found');
           // console.log(req.query.Token)
-          res.send({name: data.username, email: data.email});
+          res.send({name: data.username, email: data.email, wallet: data.Wallet});
         }
       };  
     });
