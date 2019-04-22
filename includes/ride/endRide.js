@@ -11,36 +11,38 @@ const methods = {
       } else {
         id_ = 1;
       }
-      var userid;
+      let userid;
       Bike.findOne({bike_id: rideInfo.RideID}, function(err, data) {
-        // console.log(data);
+        console.log("Bike data at endride: ",data);
         userid = data.status;
+        const newRide = new Ride({
+          RideID: id_,
+          BikeId: rideInfo.RideID,
+          UserID: userid,
+          Src: {Lat: rideInfo.Src.Lat, Lon: rideInfo.Src.Lon},
+          Dest: {Lat: rideInfo.Dest.Lat, Lon: rideInfo.Dest.Lon},
+          StartTime: rideInfo.StartTime,
+          EndTime: rideInfo.EndTime,
+          Distance: rideInfo.Distance,
+        });
+        console.log("Saving endride Data", newRide);
+        newRide.save(function(err, ride) {
+          if (err) {
+            console.log(err);
+          } else {
+            console.log('Success');
+          }
+        });
       });
 
-      const newRide = new Ride({
-        RideID: id_,
-        BikeId: rideInfo.RideID,
-        UserID: userid,
-        Src: {Lat:rideInfo.Src.Lat , long:rideInfo.Src.Lon},
-        Dest: {Lat:rideInfo.Dest.Lat , long:rideInfo.Dest.Lon},
-        StartTime: rideInfo.StartTime,
-        EndTime: rideInfo.EndTime, 
-        Distance: rideInfo.Distance,
-      });
-      newRide.save(function(err, ride) {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log('Success');
-        }
-      });
+      
     }).sort({_id: -1}).limit(1);
 
-    var myquery = { bike_id: rideInfo.RideID };
-    var newvalues = { $set: {status:  0} };
+    let myquery = {bike_id: rideInfo.RideID};
+    let newvalues = {$set: {status: 0}, location: {Lat: rideInfo.Dest['Lat'], Lon: rideInfo.Dest['Lon']}};
     Bike.updateOne(myquery, newvalues, function(err, res) {
       if (err) throw err;
-      console.log("1 document updated");
+      console.log('1 document updated');
     });
 
     res.send({'Success': 'OK'});

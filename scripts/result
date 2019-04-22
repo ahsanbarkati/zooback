@@ -1,8 +1,7 @@
 MongoDB shell version v4.0.8
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("49506b67-4fc3-4f42-8b54-0bcee29975a3") }
+Implicit session: session { "id" : UUID("619c0efe-7482-4b6d-8a7d-0400840f0405") }
 MongoDB server version: 4.0.8
 switched to db ManualAuth
-{ "_id" : ObjectId("5cb9e1c3122cfc055ae08d80"), "RideID" : 1, "Src" : { "Lat" : 15.41407132833885, "long" : 12.659898076994542 }, "Dest" : { "Lat" : 15.278886035075482, "long" : 13.369564776350028 }, "StartTime" : 1555685825, "EndTime" : 1555685827, "Distance" : 77.56426813612741, "__v" : 0 }
-{ "_id" : ObjectId("5cb9e3cb7676750b02f541da"), "RideID" : 2, "Src" : { "Lat" : 15.536774735781993, "long" : 12.044825577771405 }, "Dest" : { "Lat" : 15.402608115377124, "long" : 12.056609394485942 }, "StartTime" : 1555686345, "EndTime" : 1555686347, "Distance" : 14.971279683744172, "__v" : 0 }
+{ "_id" : ObjectId("5cbd862795ab2f0862086a28"), "RideID" : 5, "UserID" : 5, "Src" : { "Lat" : 14.806823417742457, "Lon" : 11.788146518266018 }, "Dest" : { "Lat" : 15.444722711468573, "Lon" : 11.679414905567896 }, "StartTime" : 1555924517, "EndTime" : 1555924519, "Distance" : 71.88154155010079, "__v" : 0 }
 bye

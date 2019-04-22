@@ -25,7 +25,7 @@ const methods = {
               request.get('http://0.0.0.0:900'+String(data.bike_id)+'/requestRide/'+String(data.bike_id), function(error, response) {
                 console.error('error:', error);
                 const myquery = {bike_id: data.bike_id};
-                const newvalues = {$set: {status: req.body.userID}};
+                const newvalues = {$set: {status: req.body.userId}};
                 Bike.updateOne(myquery, newvalues, function(err, res) {
                   if (err) throw err;
                   console.log('1 document updated');
