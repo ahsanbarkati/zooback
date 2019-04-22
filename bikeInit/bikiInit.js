@@ -37,6 +37,6 @@ Bike.remove({}, function(err, bike) {
   console.log('Old Database cleared');
 });
 
-for (let idx = 0; idx < numBikes; idx++) {
+for (let idx = 1; idx < numBikes; idx++) {
   addBike(idx);
 };

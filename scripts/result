@@ -1,7 +1,8 @@
 MongoDB shell version v4.0.8
 connecting to: mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("619c0efe-7482-4b6d-8a7d-0400840f0405") }
+Implicit session: session { "id" : UUID("52a17fa9-6a49-4eb4-994c-658328f77949") }
 MongoDB server version: 4.0.8
 switched to db ManualAuth
 { "_id" : ObjectId("5cbd862795ab2f0862086a28"), "RideID" : 5, "UserID" : 5, "Src" : { "Lat" : 14.806823417742457, "Lon" : 11.788146518266018 }, "Dest" : { "Lat" : 15.444722711468573, "Lon" : 11.679414905567896 }, "StartTime" : 1555924517, "EndTime" : 1555924519, "Distance" : 71.88154155010079, "__v" : 0 }
+{ "_id" : ObjectId("5cbd8ddadaac9e0dd6dbac7c"), "RideID" : 15, "UserID" : 5, "Src" : { "Lat" : 15.403187393840437, "Lon" : 11.802630222777191 }, "Dest" : { "Lat" : 15.475138012611739, "Lon" : 11.759819275277266 }, "StartTime" : 1555926488, "EndTime" : 1555926490, "Distance" : 9.222556273168989, "__v" : 0 }
 bye
